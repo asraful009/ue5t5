@@ -1,0 +1,865 @@
+{
+	"folders": [
+		{
+			"name": "UE5T5",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/storage/Linux_Unreal_Engine_5.4.4"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "UE5T5 Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Test",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Test",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Test",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Shipping",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Shipping",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"Linux",
+					"Shipping",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Test",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Test",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Test",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Shipping",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Shipping",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5 LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5 LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5",
+					"LinuxArm64",
+					"Shipping",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5Editor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"Debug",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5Editor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"DebugGame",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"UE5T5Editor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			},
+			{
+				"label": "UE5T5Editor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"UE5T5Editor",
+					"Linux",
+					"Development",
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch UE5T5 (Debug)",
+				"request": "launch",
+				"program": "/storage/work_projects/ue5/UE5T5/Binaries/Linux/UnrealGame-Linux-Debug",
+				"preLaunchTask": "UE5T5 Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5 (DebugGame)",
+				"request": "launch",
+				"program": "/storage/work_projects/ue5/UE5T5/Binaries/Linux/UnrealGame-Linux-DebugGame",
+				"preLaunchTask": "UE5T5 Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5 (Development)",
+				"request": "launch",
+				"program": "/storage/work_projects/ue5/UE5T5/Binaries/Linux/UnrealGame",
+				"preLaunchTask": "UE5T5 Linux Development Build",
+				"args": [
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5 (Test)",
+				"request": "launch",
+				"program": "/storage/work_projects/ue5/UE5T5/Binaries/Linux/UnrealGame-Linux-Test",
+				"preLaunchTask": "UE5T5 Linux Test Build",
+				"args": [
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5 (Shipping)",
+				"request": "launch",
+				"program": "/storage/work_projects/ue5/UE5T5/Binaries/Linux/UnrealGame-Linux-Shipping",
+				"preLaunchTask": "UE5T5 Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5Editor (Debug)",
+				"request": "launch",
+				"program": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "UE5T5Editor Linux Debug Build",
+				"args": [
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject"
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5Editor (DebugGame)",
+				"request": "launch",
+				"program": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "UE5T5Editor Linux DebugGame Build",
+				"args": [
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject"
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch UE5T5Editor (Development)",
+				"request": "launch",
+				"program": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "UE5T5Editor Linux Development Build",
+				"args": [
+					"/storage/work_projects/ue5/UE5T5/UE5T5.uproject"
+				],
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4",
+				"type": "cppdbg",
+				"visualizerFile": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/storage/Linux_Unreal_Engine_5.4.4/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/storage/work_projects/ue5/UE5T5/UE5T5.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/storage/Linux_Unreal_Engine_5.4.4"
+			}
+		]
+	}
+}
