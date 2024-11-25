@@ -60,8 +60,9 @@ void AUE5T5PlayerCharacter::Tick(float DeltaTime)
                 ObjectToGrab = Cast<UPrimitiveComponent>(HitResult.GetActor()->GetRootComponent());
                 if (ObjectToGrab != nullptr)
                 {
+                    ObjectToGrab->GetOwner()->Tags.Add("UE5T5_BOX_PICKUP_GRABBED");
                     ObjectToGrab->WakeAllRigidBodies();
-                    bIsGrabbedSomeThing = true;
+                    bIsGrabbedSomeThing = true;                    
                     const FVector TargetLocation = HitResult.ImpactPoint;
                     // OwnedPhysicsHandle->GrabComponentAtLocationWithRotation(ObjectToGrab, NAME_None,
                     //     ObjectToGrab->GetComponentLocation(), ObjectToGrab->GetComponentRotation());
@@ -140,13 +141,13 @@ void AUE5T5PlayerCharacter::OnLookEventHandler(const FInputActionValue& Value)
 
 void AUE5T5PlayerCharacter::OnGrabEventHandler(const bool bIsGrabbed)
 {
-    UE_LOG(LogTemp, Warning, TEXT("Grab Event"));
     bIsGrabbable = bIsGrabbed;
     if (bIsGrabbed == false && bIsGrabbedSomeThing)
     {
         if (OwnedPhysicsHandle && OwnedPhysicsHandle->GrabbedComponent)
         {
             OwnedPhysicsHandle->GetGrabbedComponent()->WakeAllRigidBodies();
+            OwnedPhysicsHandle->GetGrabbedComponent()->GetOwner()->Tags.Remove("UE5T5_BOX_PICKUP_GRABBED");
             OwnedPhysicsHandle->ReleaseComponent();
             bIsGrabbedSomeThing = false;
             ObjectToGrab = nullptr;

@@ -20,13 +20,33 @@ AUE5T5GrabObj::AUE5T5GrabObj()
 void AUE5T5GrabObj::BeginPlay()
 {
     Super::BeginPlay();
-    
+    if (GetOwner()) {
+        UE_LOG(LogTemp, Warning, TEXT("Owner: %s"), *GetOwner()->GetName());
+    }
 }
 
 // Called every frame
 void AUE5T5GrabObj::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
+    
+    if (GetOwner() && GetOwner()->Tags.Num() > 0)
+    {
+        FString Names = "";
+        for (FName Tag :  GetOwner()->Tags)
+        {
+            Names += "" + Tag.ToString() + "\n";
+        }
+        // Draw the debug text
+        DrawDebugString(
+            GetWorld(),
+            GetOwner()->GetActorLocation() + FVector(0, 0, 180),
+            Names,
+            nullptr,
+            FColor::Green,
+            0.0f, // Duration: 0 means it will stay until next Tick
+            true  // Draw shadow for better visibility
+        );
+    }
 }
 
