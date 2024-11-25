@@ -12,6 +12,6 @@
 UCLASS()
 class UE5T5_API AUE5T5GameMode : public AGameModeBase
 {
-	GENERATED_BODY()
-	
+    GENERATED_BODY()
+    
 };
