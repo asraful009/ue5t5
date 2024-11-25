@@ -35,4 +35,5 @@ protected:
 
 private:
     TArray<TObjectPtr<AUE5T5GrabObj>> GrabbedObjects;
+    TArray<TObjectPtr<AUE5T5GrabObj>> GrabbedReleaseObjects;
 };

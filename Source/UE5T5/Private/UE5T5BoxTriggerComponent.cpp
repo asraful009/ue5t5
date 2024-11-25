@@ -22,14 +22,43 @@ void UUE5T5BoxTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickTy
     FActorComponentTickFunction* ThisTickFunction)
 {
     Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+    
     if (GrabbedObjects.Num() > 0)
     {
+        if (GrabbedReleaseObjects.Num() > 0 && GrabbedReleaseObjects.Num() == GrabbedObjects.Num())
+        {
+            // Draw the debug text
+            DrawDebugString(
+                GetWorld(),
+                GetOwner()->GetActorLocation() + FVector(0, 0, 50),
+                "Done",
+                nullptr,
+                FColor::Red,
+                0.0f, // Duration: 0 means it will stay until next Tick
+                true  // Draw shadow for better visibility
+            );
+            return;
+        }
         FString Names = "";
         for (const TObjectPtr<AUE5T5GrabObj>& GrabObj : GrabbedObjects)
         {
             if (GrabObj)
             {
-                Names += "" + GrabObj->GetName() + "\n";
+                bool isGrabbedRelease = true;
+                Names += "" + GrabObj->GetName() + " [ ";
+                for (FName Tag :  GrabObj->Tags)
+                {
+                    if (GrabObj->Tags.Contains("UE5T5_BOX_PICKUP_GRABBED"))
+                    {
+                        isGrabbedRelease = false;
+                    }
+                    Names += "" + Tag.ToString() + ", ";
+                }
+                Names += "]\n";
+                if (isGrabbedRelease)
+                {
+                    GrabbedReleaseObjects.Add(GrabObj);
+                }
             }
         }
         // Draw the debug text
@@ -73,12 +102,12 @@ void UUE5T5BoxTriggerComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp
         if (GrabObj && GrabbedObjects.Contains(GrabObj))
         {
             GrabbedObjects.Remove(GrabObj);
-            UE_LOG(LogTemp, Warning, TEXT("Removed from GrabbedObjects: %s"), *OtherActor->GetName());
+            if (GrabbedReleaseObjects.Contains(GrabObj))
+            {
+                GrabbedReleaseObjects.Remove(GrabObj);
+            }
         }
-        else
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Actor not found in GrabbedObjects: %s"), *OtherActor->GetName());
-        }
+        
     }
     UE_LOG(LogTemp, Warning, TEXT("GrabbedObjects: %d"), GrabbedObjects.Num());
 }

@@ -37,7 +37,7 @@ void AUE5T5GrabObj::Tick(float DeltaTime)
         // Draw the debug text
         DrawDebugString(
             GetWorld(),
-            GetActorLocation() + FVector(0, 0, 120),
+            GetActorLocation() + FVector(0, 0, 60),
             Names,
             nullptr,
             FColor::Green,
