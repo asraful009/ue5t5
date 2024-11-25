@@ -22,7 +22,27 @@ void UUE5T5BoxTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickTy
     FActorComponentTickFunction* ThisTickFunction)
 {
     Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-    UE_LOG(LogTemp, Warning, TEXT("Tick"));
+    if (GrabbedObjects.Num() > 0)
+    {
+        FString Names = "";
+        for (const TObjectPtr<AUE5T5GrabObj>& GrabObj : GrabbedObjects)
+        {
+            if (GrabObj)
+            {
+                Names += "" + GrabObj->GetName() + "\n";
+            }
+        }
+        // Draw the debug text
+        DrawDebugString(
+            GetWorld(),
+            GetOwner()->GetActorLocation() + FVector(0, 0, 50),
+            Names,
+            nullptr,
+            FColor::Green,
+            0.0f, // Duration: 0 means it will stay until next Tick
+            true  // Draw shadow for better visibility
+        );
+    }
 }
 
 void UUE5T5BoxTriggerComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
